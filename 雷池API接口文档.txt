@@ -1,0 +1,1009 @@
+以下是翻译后的API文档内容，由于内容较多，我将其分段翻译，以确保清晰和准确：
+
+
+接口
+Swagger UI
+
+doc.json
+
+Explore
+
+mgt API 2.0
+
+[Base URL:/api]
+
+doc.json
+
+mgt API Swagger文档
+
+settings
+
+
+• GET/ManagerInfo
+
+获取阻塞信息
+
+
+• PUT/ManagerInfo
+
+更新阻塞信息
+
+
+• GET/commercial/block_page
+
+获取阻塞页面
+
+
+• PUT/commercial/block_page
+
+更新阻塞页面
+
+
+• GET/commercial/block_page_list
+
+列出阻塞页面
+
+
+• GET/open/intelligence
+
+获取恶意IP共享计划
+
+
+• POST/open/intelligence
+
+更新恶意IP共享计划
+
+
+• GET/open/ipgroup
+
+列出IP组
+
+
+• PUT/open/ipgroup
+
+更新IP组
+
+
+• POST/open/ipgroup
+
+创建IP组
+
+
+• DELETE/open/ipgroup
+
+删除IP组
+
+
+• POST/open/ipgroup/append
+
+向IP组中添加IP
+
+
+• GET/open/ipgroup/crawler
+
+获取搜索引擎爬虫组ID
+
+
+• POST/open/ipgroup/crawler
+
+更新搜索引擎爬虫
+
+
+• GET/open/ipgroup/detail
+
+获取IP组详细信息
+
+
+• GET/open/ipgroup/link
+
+通过链接获取IP
+
+
+• POST/open/ipgroup/link
+
+通过链接创建IP组
+
+
+• GET/open/share_behaviour
+
+获取WAF共享用户行为信息
+
+
+• POST/open/share_behaviour
+
+设置WAF共享用户行为信息
+
+
+• GET/open/share_fingerprint
+
+获取阻塞页面是否共享浏览器指纹信息
+
+
+• POST/open/share_fingerprint
+
+设置阻塞页面是否共享浏览器指纹信息
+
+
+---
+
+
+
+系统
+
+
+• GET/business/account
+
+获取登录安全配置
+
+
+• POST/business/account
+
+设置登录安全配置
+
+
+• GET/business/audit_log
+
+获取审计日志
+
+
+• GET/business/frontend_style
+
+获取前端样式
+
+
+• PUT/business/frontend_style
+
+设置前端样式
+
+
+• GET/commercial/syslog
+
+获取Syslog配置
+
+
+• PUT/commercial/syslog
+
+更新Syslog配置
+
+
+• POST/commercial/syslog/test
+
+测试Syslog配置
+
+
+• GET/commercial/webhook
+
+获取攻击告警配置
+
+
+• PUT/commercial/webhook
+
+更新攻击告警配置
+
+
+• PUT/commercial/webhook/test
+
+测试攻击告警配置
+
+
+• GET/open/Commercial/downgrade
+
+获取降级状态
+
+
+• PUT/open/Commercial/downgrade
+
+执行降级操作
+
+
+• GET/open/auth/token
+
+获取API令牌
+
+
+• PUT/open/auth/token
+
+更新API令牌
+
+
+• DELETE/open/auth/token
+
+删除API令牌
+
+
+• GET/open/detector
+
+获取检测器性能信息
+
+
+• POST/open/detector
+
+更新检测器性能信息
+
+
+• GET/open/global/log_clean
+
+获取清理数据间隔配置
+
+
+• POST/open/global/log_clean
+
+更新清理数据间隔配置
+
+
+• GET/open/system
+
+获取系统信息
+
+
+• PUT/open/system
+
+更新管理证书
+
+
+• GET/open/system/arch
+
+获取系统架构信息
+
+
+• GET/open/system/protocol
+
+获取协议状态
+
+
+• POST/open/system/protocol
+
+更新协议状态
+
+
+---
+
+
+
+防篡改
+
+
+• GET/business/anti_tamper/{id}
+
+获取防篡改详细信息
+
+
+• PUT/business/anti_tamper/{id}
+
+更新防篡改设置
+
+
+• DELETE/business/anti_tamper/{id}
+
+删除防篡改设置
+
+
+• GET/business/anti_tamper/{id}/page
+
+获取防篡改页面信息
+
+
+• GET/business/site/{site_id}/anti_tamper
+
+列出站点防篡改信息
+
+
+• PUT/business/site/{site_id}/anti_tamper
+
+刷新防篡改设置
+
+
+• POST/business/site/{site_id}/anti_tamper
+
+创建防篡改设置
+
+
+• GET/business/site/{site_id}/anti_tamper/resource/{resource_id}
+
+获取防篡改资源信息
+
+
+---
+
+
+
+报告
+
+
+• GET/business/report
+
+列出报告
+
+
+• POST/business/report
+
+创建报告
+
+
+• GET/business/report/{id}
+
+获取报告详细信息
+
+
+• DELETE/business/report/{id}
+
+删除报告
+
+
+---
+
+
+
+攻击记录
+
+
+• GET/commercial/record/export
+
+导出攻击日志
+
+
+• GET/open/events
+
+获取攻击事件
+
+
+• GET/open/record/:id
+
+获取攻击日志详细信息
+
+
+• GET/open/records
+
+获取攻击日志
+
+
+---
+
+
+
+增强规则
+
+
+• PUT/commercial/skynet/rule
+
+更新增强规则
+
+
+• GET/open/skynet/rule
+
+获取增强规则
+
+
+• GET/open/skynet/rule/switch
+
+获取增强规则全局状态
+
+
+• PUT/open/skynet/rule/switch
+
+更新增强规则全局状态
+
+
+---
+
+
+
+速率限制
+
+
+• PUT/open/acl/relieve
+
+解除速率限制
+
+
+• GET/open/global/acl
+
+获取全局速率限制配置
+
+
+• POST/open/global/acl
+
+设置全局速率限制配置
+
+
+• GET/open/records/acl
+
+获取速率限制日志
+
+
+• GET/open/site/{id}/acl
+
+获取Web服务速率限制配置
+
+
+• POST/open/site/{id}/acl
+
+设置Web服务速率限制配置
+
+
+---
+
+
+
+用户
+
+
+• GET/open/auth/csrf
+
+获取CSRF令牌
+
+
+• POST/open/auth/login
+
+使用用户名和密码登录
+
+
+• POST/open/auth/logout
+
+注销登录
+
+
+• POST/open/auth/tfa
+
+使用双因素认证登录
+
+
+• GET/open/users
+
+列出用户
+
+
+• PUT/open/users
+
+更新用户信息
+
+
+• POST/open/users
+
+创建用户
+
+
+• DELETE/open/users
+
+删除用户
+
+
+• POST/open/users/{id}/totp
+
+重置用户TOTP
+
+
+---
+
+
+
+认证
+
+
+• GET/open/auth_defense/source
+
+列出认证源
+
+
+• POST/open/auth_defense/source
+
+创建认证源
+
+
+• GET/open/auth_defense/source/{id}
+
+获取认证源详细信息
+
+
+• PUT/open/auth_defense/source/{id}
+
+更新认证源
+
+
+• DELETE/open/auth_defense/source/{id}
+
+删除认证源
+
+
+• GET/open/auth_defense/source/{id}/user
+
+列出认证源用户
+
+
+• PUT/open/auth_defense/source/{id}/user/{user_id}
+
+更新认证源用户
+
+
+• DELETE/open/auth_defense/source/{id}/user/{user_id}
+
+删除认证源用户
+
+
+• GET/open/records/auth_defense
+
+获取认证日志
+
+
+• GET/open/v2/records/auth_defense
+
+获取认证日志（V2）
+
+
+---
+
+
+
+SSL证书
+
+
+• GET/open/cert
+
+列出证书
+
+
+• POST/open/cert
+
+添加或更新证书
+
+
+• GET/open/cert/{id}
+
+获取证书详细信息
+
+
+• DELETE/open/cert/{id}
+
+删除证书
+
+
+---
+
+
+
+云服务
+
+
+• GET/open/cloud/policies
+
+获取云策略
+
+
+• POST/open/cloud/policies/subscribe
+
+订阅云策略
+
+
+---
+
+
+
+统计
+
+
+• GET/open/dashboard/intercepts
+
+获取最近30天的基本拦截数据
+
+
+• GET/open/dashboard/requests
+
+获取最近30天的基本请求数据
+
+
+• GET/open/dashboard/user/counts
+
+获取基本访问信息
+
+
+• GET/stat/advance/access
+
+获取高级访问数据
+
+
+• GET/stat/advance/attack
+
+获取高级拦截数据
+
+
+• GET/stat/advance/client
+
+获取高级客户端数据
+
+
+• GET/stat/advance/domain
+
+获取高级域名数据
+
+
+• GET/stat/advance/error_status_code
+
+获取高级错误状态码数据
+
+
+• GET/stat/advance/location
+
+获取高级地理位置数据
+
+
+• GET/stat/advance/page
+
+获取高级页面
+
+---
+
+
+
+统计
+
+
+• GET/stat/advance/status_code
+
+获取高级状态码统计信息。
+
+
+• GET/stat/advance/trend/access
+
+获取高级访问趋势。
+
+
+• GET/stat/advance/trend/intercept
+
+获取高级拦截趋势。
+
+
+• GET/stat/basic/access
+
+获取基础访问计数。
+
+
+• GET/stat/basic/attack
+
+获取基础攻击统计。
+
+
+• GET/stat/basic/error_status_code
+
+获取基础错误状态码统计。
+
+
+• GET/stat/basic/location
+
+获取基础地理位置信息。
+
+
+• GET/stat/qps
+
+获取每秒查询率（QPS）。
+
+
+---
+
+
+
+检测模式
+
+
+• GET/open/global/mode
+
+获取检测模式。
+
+
+• PUT/open/global/mode
+
+更新检测模式。
+
+
+---
+
+
+
+全局设置
+
+
+• GET/open/global/proxy
+
+获取全局代理设置。
+
+
+• PUT/open/global/proxy
+
+设置全局代理配置。
+
+
+---
+
+
+
+通用配置
+
+
+• POST/open/intelligence/ip_lib
+
+更新恶意IP库。
+
+
+---
+
+
+
+自定义规则
+
+
+• GET/open/policy
+
+列出自定义规则。
+
+
+• PUT/open/policy
+
+更新自定义规则。
+
+
+• POST/open/policy
+
+创建自定义规则。
+
+
+• DELETE/open/policy
+
+删除自定义规则。
+
+
+• GET/open/policy/detail
+
+获取自定义规则详情。
+
+
+• PUT/open/policy/switch
+
+启用/禁用自定义规则。
+
+
+---
+
+
+
+日志
+
+
+• GET/open/records/acl
+
+获取速率限制日志。
+
+
+• GET/open/records/auth_defense
+
+获取认证防御日志。
+
+
+• GET/open/v2/records/auth_defense
+
+获取认证防御日志（V2）。
+
+
+---
+
+
+
+反机器人
+
+
+• GET/open/records/challenge
+
+列出反机器人日志。
+
+
+---
+
+
+
+等待室
+
+
+• GET/open/records/waiting
+
+获取等待室日志。
+
+
+• GET/open/site/:id/waiting
+
+获取网站等待室规则。
+
+
+• POST/open/site/:id/waiting
+
+设置网站等待室规则。
+
+
+---
+
+
+
+Web服务
+
+
+• GET/open/site
+
+列出Web服务。
+
+
+• PUT/open/site
+
+更新Web服务。
+
+
+• POST/open/site
+
+创建Web服务。
+
+
+• DELETE/open/site
+
+删除Web服务。
+
+
+• PUT/open/site/challenge
+
+更新Web服务反机器人设置。
+
+
+• PUT/open/site/defense
+
+更新Web服务认证设置。
+
+
+• POST/open/site/healthcheck
+
+获取Web服务健康检查结果。
+
+
+• PUT/open/site/mode
+
+更新Web服务运行模式。
+
+
+• GET/open/site/{id}
+
+获取Web服务详情。
+
+
+• GET/open/site/{id}/acl
+
+获取Web服务速率限制配置。
+
+
+• POST/open/site/{id}/acl
+
+设置Web服务速率限制配置。
+
+
+• GET/open/site/{id}/excludes
+
+获取Web服务路由集合配置。
+
+
+• POST/open/site/{id}/excludes
+
+更新Web服务路由集合配置。
+
+
+• GET/open/site/{id}/log
+
+列出Web服务访问/错误日志。
+
+
+• GET/open/site/{id}/log/detail
+
+获取Web服务访问/错误日志详情。
+
+
+• GET/open/site/{id}/log/download
+
+下载Web服务访问/错误日志。
+
+
+• GET/open/site/{id}/log/limit
+
+获取Web服务日志限制。
+
+
+• POST/open/site/{id}/log/limit
+
+设置Web服务日志限制。
+
+
+• GET/open/site/{id}/nginx_config
+
+获取Web服务Tengine配置。
+
+
+• PUT/open/site/{id}/nginx_config
+
+更新Web服务Tengine配置。
+
+
+• GET/open/site/{id}/proxy
+
+获取Web服务安全配置。
+
+
+• PUT/open/site/{id}/proxy
+
+设置Web服务安全配置。
+
+
+• GET/open/site/{id}/resources
+
+列出Web服务路由。
+
+
+• DELETE/open/site/{id}/resources
+
+删除Web服务路由。
+
+
+• GET/open/site/{id}/static
+
+获取Web服务静态文件。
+
+
+• PUT/open/site/{id}/static
+
+重命名Web服务静态文件。
+
+
+• POST/open/site/{id}/static
+
+创建Web服务静态文件。
+
+
+• DELETE/open/site/{id}/static
+
+删除Web服务静态文件。
+
+
+---
+
+
+
+动态
+
+
+• GET/open/site/{id}/chaos
+
+获取站点动态配置。
+
+
+• POST/open/site/{id}/chaos
+
+创建站点动态配置。
+
+
+---
+
+
+
+许可证
+
+
+• GET/open/system/authorize
+
+获取许可证信息。
+
+
+• PUT/open/system/authorize
+
+重新申请许可证。
+
+
+• POST/open/system/authorize
+
+应用许可证。
+
+
+• DELETE/open/system/authorize
+
+删除许可证。
+
+

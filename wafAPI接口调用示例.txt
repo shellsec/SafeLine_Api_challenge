@@ -1,0 +1,14 @@
+
+访问控制端
+
+启用
+
+curl -k -X POST -H "token: KQo55s0kDZtSBqYbiCuhIG9E" http://192.168.1.2:8000/api/challenge/enable/office
+
+
+
+关闭
+
+curl -k -X POST -H "token: KQo55s0kDZtSBqYbiCuhIG9E" http://192.168.1.2:8000/api/challenge/disable/office
+
+

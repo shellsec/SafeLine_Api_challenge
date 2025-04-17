@@ -1,0 +1,106 @@
+# 1. 创建部署目录
+mkdir -p /opt/waf-api
+
+# 2. 上传文件到服务器
+# 在本地执行：
+scp -r e:\安全项目和文档\雷池wafAPI接口调用\* root@服务器IP:/opt/waf-api/
+
+# 3. 安装依赖
+pip3 install fastapi uvicorn requests
+
+# 4. 配置服务
+cp /opt/waf-api/waf-api.service /etc/systemd/system/
+systemctl daemon-reload
+systemctl enable waf-api
+systemctl start waf-api
+
+# 查看服务状态
+systemctl status waf-api
+
+# 查看日志
+journalctl -u waf-api -f
+
+# 重启服务
+systemctl restart waf-api
+
+# 停止服务
+systemctl stop waf-api
+
+
+# 查看防火墙状态
+firewall-cmd --state
+
+# 开放端口
+firewall-cmd --zone=public --add-port=8000/tcp --permanent
+firewall-cmd --reload
+
+
+# 创建日志目录
+mkdir -p /opt/waf-api/logs
+chmod 755 /opt/waf-api/logs
+
+# 重新加载服务
+systemctl daemon-reload
+systemctl restart waf-api
+
+# 查看详细错误日志
+journalctl -u waf-api -n 50 --no-pager
+
+
+
+
+下载安装
+
+# 1. 安装编译依赖
+yum install -y gcc openssl-devel bzip2-devel libffi-devel zlib-devel wget
+
+# 2. 下载 Python 3.9.18 源码
+cd /usr/local/src
+wget https://www.python.org/ftp/python/3.9.18/Python-3.9.18.tgz
+
+# 3. 解压并编译安装
+tar xzf Python-3.9.18.tgz
+cd Python-3.9.18
+./configure --enable-optimizations
+make altinstall
+
+# 4. 创建软链接
+ln -sf /usr/local/bin/python3.9 /usr/bin/python3.9
+ln -sf /usr/local/bin/pip3.9 /usr/bin/pip3.9
+
+# 5. 安装项目依赖
+pip3.9 install fastapi uvicorn requests
+
+
+python3.9 --version
+
+
+systemctl daemon-reload
+systemctl restart waf-api
+
+
+
+持续报错
+
+
+pip3.9 install "uvicorn==0.11.8"
+systemctl restart waf-api
+
+journalctl -u waf-api -f
+
+
+pip3 install "uvicorn==0.11.8" "fastapi==0.63.0" "starlette==0.13.6"
+
+
+
+# 先升级 pip
+pip3 install --upgrade pip
+
+# 安装依赖，禁用 uvloop
+pip3 install "fastapi==0.63.0" "starlette==0.13.6" "uvicorn==0.11.8" --no-deps
+pip3 install click h11 websockets typing-extensions
+
+
+
+
+
